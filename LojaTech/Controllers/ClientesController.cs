@@ -16,13 +16,14 @@ namespace LojaTech.Controllers
             _clienteRepo = clienteRepo;
         }
 
-
+        #region Region GetId
         //public ClientesController(IRepository<Cliente> cliente, IClienteRepository clienteRepo)
         //{
         //    _cliente = cliente;
         //    _clienteRepo = clienteRepo;
         //}
-
+        #endregion
+        
         [HttpGet]
         public async Task<IEnumerable<Cliente>> GetAll()
         {

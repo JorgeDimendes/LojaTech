@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using LojaTech.Data;
 using LojaTech.Repository;
 using LojaTech.Repository.Interfaces;
@@ -10,6 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Configuração Enum
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 //SqLite
 builder.Services.AddDbContext<AppDbContext>(
     context => context.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -17,6 +25,7 @@ builder.Services.AddDbContext<AppDbContext>(
 
 //Repository
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
