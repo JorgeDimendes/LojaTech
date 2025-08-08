@@ -62,5 +62,17 @@ namespace LojaTech.Controllers
             }
             return Ok(funcionario);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Funcionario>> Delete(int id)
+        {
+            var localizaFuncionario = await _enderecoRepo.GetById(id);
+            if (localizaFuncionario == null)
+            {
+                return BadRequest("Funcionario não localizado");
+            }
+            var deletado = await _enderecoRepo.DeleteAsync(localizaFuncionario);
+            return Ok(deletado);
+        }
     }
 }
