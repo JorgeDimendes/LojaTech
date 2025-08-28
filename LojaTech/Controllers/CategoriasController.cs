@@ -6,11 +6,11 @@ namespace LojaTech.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase
+    public class CategoriasController : ControllerBase
     {
         private readonly ICategoriaRepository _categoriaRepo;
 
-        public CategoriaController(ICategoriaRepository categoriaRepo)
+        public CategoriasController(ICategoriaRepository categoriaRepo)
         {
             _categoriaRepo = categoriaRepo;
         }

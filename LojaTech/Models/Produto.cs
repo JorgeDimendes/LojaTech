@@ -11,6 +11,6 @@ namespace LojaTech.Models
         public int QuantidadeEstoque { get; set; }
 
         public int CategoriaId { get; set; }
-        public Categoria Categoria { get; set; }
+        public Categoria? Categoria { get; set; }
     }
 }

@@ -1,3 +1,5 @@
+using LojaTech.DTO.Categoria;
+
 namespace LojaTech.Models;
 
 public class Categoria

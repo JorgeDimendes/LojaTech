@@ -11,10 +11,11 @@ public class ProdutoRepository : Repository<Produto>, IProdutoRepository
     {
     }
 
-    public async Task<Produto> filtroName(int id, string pesquisa)
+    public async Task<Produto> getId(int id)
     {
         return await _entity
-            .Include(c => c.Id == id)
-            .FirstOrDefaultAsync(c => c.Nome == pesquisa);
+            .Include(c => c.Categoria)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 }
