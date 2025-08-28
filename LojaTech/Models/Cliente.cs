@@ -1,4 +1,6 @@
-﻿namespace LojaTech.Models
+﻿using Newtonsoft.Json;
+
+namespace LojaTech.Models
 {
     public class Cliente
     {
@@ -10,5 +12,6 @@
 
         //Relacionamento
         public Endereco? Endereco { get; set; }
+        public IEnumerable<Venda>? Vendas { get; set; }
     }
 }

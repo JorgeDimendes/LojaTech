@@ -1,4 +1,5 @@
-﻿using LojaTech.Enum;
+﻿using System.Text.Json.Serialization;
+using LojaTech.Enum;
 
 namespace LojaTech.Models
 {

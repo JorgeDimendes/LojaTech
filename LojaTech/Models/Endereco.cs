@@ -11,16 +11,11 @@ namespace LojaTech.Models
         public string? Logradouro { get; set; }
         public string? Complemento { get; set; }
         public string? Numero { get; set; }
-
-
-        [JsonIgnore]
+        
         public int? ClienteId { get; set; }
-        [JsonIgnore]
         public Cliente? Cliente { get; set; }
 
-        [JsonIgnore]
         public int? FuncionarioId { get; set; }
-        [JsonIgnore]
         public Funcionario? Funcionario { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace LojaTech.Data
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Venda> Vendas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
